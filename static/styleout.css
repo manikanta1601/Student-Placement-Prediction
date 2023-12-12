@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
+    background: linear-gradient(to right, #6dd5fa);
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,30 +8,55 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: #fff;
 }
 
 .intro, .ans, .out, .end {
     text-align: center;
     margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro {
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
 }
 
 .intro h1 {
-    color: #333;
+    color: #fff;
     font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ans {
+    background: linear-gradient(to right, #27ae60, #86d38f);
 }
 
 .ans h2 {
-    color: #4caf50;
+    color: #fff;
     font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.out {
+    background: linear-gradient(to right, #34495e, #a9b8c5);
 }
 
 .out p {
-    color: #333;
-    font-size: 18px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.5;
 }
 
+.end {
+    background: linear-gradient(to right, #555, #ccc);
+}
 
 .end h2 {
-    color: #777;
+    color: #fff;
     font-size: 16px;
+    opacity: 0.8;
+    margin-top: 10px;
 }
