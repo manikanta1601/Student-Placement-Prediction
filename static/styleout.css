@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #6dd5fa);
+    background: linear-gradient(to right, #86c5ff, #6dd5fa);
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,50 +13,92 @@ body {
 
 .intro, .ans, .out, .end {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .intro {
-    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    background: none;
 }
 
 .intro h1 {
-    color: #fff;
+    color: #000; /* Black text color */
     font-size: 36px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .ans {
-    background: linear-gradient(to right, #27ae60, #86d38f);
+    background: none; /* Semi-transparent white background */
 }
 
 .ans h2 {
-    color: #fff;
+    color: #000; /* Black text color */
     font-size: 28px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .out {
-    background: linear-gradient(to right, #34495e, #a9b8c5);
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
 }
 
 .out p {
-    color: #fff;
+    color: #000; /* Black text color */
     font-size: 24px;
     line-height: 1.5;
 }
 
 .end {
-    background: linear-gradient(to right, #555, #ccc);
+    background: none; /* No background for this section */
+    border: 2px solid #bdc3c7;
+    padding: 15px;
 }
 
 .end h2 {
-    color: #fff;
+    color: #000; /* Black text color */
     font-size: 16px;
-    opacity: 0.8;
-    margin-top: 10px;
+}
+
+/* Additional styles for better readability */
+.out, .ans {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 24px;
+    }
+    .ans h2 {
+        font-size: 20px;
+    }
+    .out p {
+        font-size: 16px;
+    }
+    .end h2 {
+        font-size: 14px;
+    }
+}
+
+/* Add a background image to the body */
+body {
+    background: url('https://img.freepik.com/free-vector/people-recruiting-people-vacant-job_52683-44232.jpg?w=996&t=st=1702395063~exp=1702395663~hmac=da9b704507db261f144c4a42fad84b3014058a0a812f1e65bca5134b7565aa5b') center/cover fixed no-repeat;
+}
+
+.predict-button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.predict-button:hover {
+    background-color: #2980b9;
 }
