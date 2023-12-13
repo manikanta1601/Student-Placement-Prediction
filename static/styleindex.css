@@ -17,6 +17,8 @@ body {
 
 .welcome-message h1 {
     color: #333;
+    font-size: 2.5em; /* Adjusted font size for larger text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .form-container {
@@ -63,7 +65,8 @@ select:focus {
 
 .container {
     position: fixed;
-    bottom: 0;
+    top: 83%;
+    /* bottom: 0; */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -113,24 +116,24 @@ label {
     margin: 20px;
 }
 
-/* Add a background image to the body */
 body {
-    background: url('https://img.freepik.com/free-vector/illustration-university-graduates_53876-28466.jpg?w=1060&t=st=1702391712~exp=1702392312~hmac=f23954a8fc4ba946d93ebb93e3ed998e9792eeca7db31d86fe7be54dc20f1613') center/cover fixed no-repeat; /* Add your background image path */
+    background: url('../static/ag.png') center/cover fixed no-repeat; 
 }
 
 .predict-button {
     background: linear-gradient(to right, #1bc5d2, #23afd5);
     color: #fff;
     cursor: pointer;
-    padding: 15px 20px; /* Adjust padding to increase button size */
+    padding: 17px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; 
     transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-    width: 100%; /* Make the button full width */
-    display: block; /* Ensure the button takes up full width */
-    margin: 20px auto 0; /* Center-align the button at the bottom with some top margin */
+    width: 100%;
+    display: block;
+    margin: 20px auto 0;
     position: relative;
     overflow: hidden;
+    font-size: 1.1em;
 }
 
 .predict-button:before {
@@ -159,4 +162,3 @@ body {
 .predict-button:active {
     transform: translateY(2px);
 }
-

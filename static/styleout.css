@@ -83,7 +83,7 @@ body {
 
 /* Add a background image to the body */
 body {
-    background: url('https://img.freepik.com/free-vector/people-recruiting-people-vacant-job_52683-44232.jpg?w=996&t=st=1702395063~exp=1702395663~hmac=da9b704507db261f144c4a42fad84b3014058a0a812f1e65bca5134b7565aa5b') center/cover fixed no-repeat;
+    background: url('../static/bg.png') center/cover fixed no-repeat;
 }
 
 .predict-button {

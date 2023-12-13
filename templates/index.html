@@ -36,12 +36,14 @@
 
             <label for="eca">Extracurricular Activities:</label>
             <select name='eca' required>
+                <option value='' disabled selected>Select</option>
                 <option value='0'>No</option>
                 <option value='1'>Yes</option>
             </select>
 
             <label for="pt">Placement Training:</label>
             <select name='pt' required>
+                <option value='' disabled selected>Select</option>
                 <option value='0'>No</option>
                 <option value='1'>Yes</option>
             </select>
@@ -52,7 +54,7 @@
             <label for="hsc">HSC Marks:</label>
             <input type='number' step="1" name='hsc' min="0" pattern="^[0-9]\d*$" required>
             <div class="container">
-                <button class="predict-button" onclick="predict()">Predict</button>
+                <button class="predict-button" onclick="predict()">Predict Result</button>
             </div>
         </div>
 
