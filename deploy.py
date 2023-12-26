@@ -24,7 +24,7 @@ def predict():
 
     result = model.predict([[cgpa,internships,projects,workshops,aptitude,softskills,eca,pt,ssc,hsc]])[0]
     if result==1:
-        out = 'You have high chances of getting placed!!!'
+        out = 'You have chance of getting placed!!!'
     else:
         out = 'You have low chances of getting placed. All the best.'
     return render_template('out.html', output = out)

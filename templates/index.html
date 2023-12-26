@@ -10,12 +10,12 @@
 
 <body>
     <div class="welcome-message">
-        <h1>Welcome to Placement Prediction App</h1>
+        <h1>Placement Prospect Classification</h1>
     </div>
-    <form action='/predict' method="POST">
+    <form action='/predict' method="POST" onsubmit="return validateForm()">
         <div class="column-container">
-            <label for="cgpa">CGPA:</label>
-            <input type='number' step="0.01" name='cgpa' min="0" pattern="^[0-9]\d*$" required>
+            <label for="cgpa">CGPA (0-10):</label>
+            <input type='number' step="0.01" name='cgpa' min="0" max="10" pattern="^[0-9]\d*$" required>
 
             <label for="internships">Internships:</label>
             <input type='number' step="1" name='internships' min="0" pattern="^[0-9]\d*$" required>
@@ -26,13 +26,13 @@
             <label for="workshops">Workshops/Certifications:</label>
             <input type='number' step="1" name='workshops' min="0" pattern="^[0-9]\d*$" required>
 
-            <label for="aptitude">Aptitude TestScore:</label>
-            <input type='number' step="0.1" name='aptitude' min="0" pattern="^[0-9]\d*$" required>
+            <label for="aptitude">Aptitude TestScore (0-100):</label>
+            <input type='number' step="0.1" name='aptitude' min="0" max="100" pattern="^[0-9]\d*$" required>
         </div>
 
         <div class="column-container">
-            <label for="softskills">SoftSkills Rating:</label>
-            <input type='number' step="0.01" name='softskills' min="0" pattern="^[0-9]\d*$" required>
+            <label for="softskills">SoftSkills Rating (0-5):</label>
+            <input type='number' step="0.01" name='softskills' min="0" max="5" pattern="^[0-9]\d*$" required>
 
             <label for="eca">Extracurricular Activities:</label>
             <select name='eca' required>
@@ -48,17 +48,44 @@
                 <option value='1'>Yes</option>
             </select>
 
-            <label for="ssc">SSC Marks:</label>
-            <input type='number' step="1" name='ssc' min="0" pattern="^[0-9]\d*$" required>
+            <label for="ssc">SSC Marks (0-100):</label>
+            <input type='number' step="1" name='ssc' min="0" max="100" pattern="^[0-9]\d*$" required>
 
-            <label for="hsc">HSC Marks:</label>
-            <input type='number' step="1" name='hsc' min="0" pattern="^[0-9]\d*$" required>
+            <label for="hsc">HSC Marks (0-100):</label>
+            <input type='number' step="1" name='hsc' min="0" max="100" pattern="^[0-9]\d*$" required>
+
             <div class="container">
-                <button class="predict-button" onclick="predict()">Predict Result</button>
+                <button class="predict-button">Predict Result</button>
             </div>
         </div>
-
     </form>
+
+    <script>
+        function validateForm() {
+            var fields = [
+                { name: 'cgpa', min: 0, max: 10, message: 'Please enter a CGPA between 0 and 10.' },
+                { name: 'internships', min: 0, message: 'Please enter a valid number of internships.' },
+                { name: 'projects', min: 0, message: 'Please enter a valid number of projects.' },
+                { name: 'workshops', min: 0, message: 'Please enter a valid number of workshops.' },
+                { name: 'aptitude', min: 0, max: 100, message: 'Please enter an aptitude score between 0 and 100.' },
+                { name: 'softskills', min: 0, max: 5, message: 'Please enter a SoftSkills rating between 0 and 5.' },
+                { name: 'ssc', min: 0, max: 100, message: 'Please enter SSC marks between 0 and 100.' },
+                { name: 'hsc', min: 0, max: 100, message: 'Please enter HSC marks between 0 and 100.' }
+            ];
+
+            for (var i = 0; i < fields.length; i++) {
+                var field = fields[i];
+                var value = document.forms[0][field.name].value;
+
+                if (value < field.min || (field.max && value > field.max)) {
+                    alert(field.message);
+                    return false;
+                }
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
 </body>
 
 </html>
